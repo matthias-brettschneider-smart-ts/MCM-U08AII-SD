@@ -1,0 +1,147 @@
+################################################################################
+#                                                                              #
+#                         |\    /|   /- - -  |\    /|                          #
+#                         | \  / |  |        | \  / |                          #
+#                         |  \/  |  |        |  \/  |                          #
+#                         |      |   \_ _ _  |      |                          #
+#                                                                              #
+#                                                                              #
+#         T H E   S M A R T   M E A S U R E M E N T   S O L U T I O N          #
+#                                                                              #
+################################################################################
+#             (c) SMART TESTSOLUTIONS GmbH - all rights reserved               #
+################################################################################
+
+MAKE_PROJECT_NAME := MCM_U08AII_SD_application
+
+MAKE_FIRMWARE_TYPE := 47
+MAKE_FIRMWARE_VARIANT := 0x41
+MAKE_FIRMWARE_VERSION_MAJOR := 0
+MAKE_FIRMWARE_VERSION_MINOR := 0
+MAKE_FIRMWARE_VERSION_PATCH := 0
+
+MAKE_DISPLAY_MEMORY_USAGE := false
+
+MAKE_TREAT_ALL_WARNINGS_AS_ERRORS := true
+
+MAKE_COMPILER_NAME := xc-dsc
+MAKE_COMPILER_VERSION := 3.21
+
+MAKE_DEVICE_FAMILY_PACK_NAME := dsPIC33CK-MP_DFP
+MAKE_DEVICE_FAMILY_PACK_VERSION := 1.15.423
+
+MAKE_CONFIGURATION := DSPIC33CK256MP506_1
+
+MAKE_SETTINGS += APPL_DEBUG_DO_TIMING_ANALYSES=false
+MAKE_SETTINGS += ASSERT_ACTIVE=false
+MAKE_SETTINGS += BLOCK_DISABLE_INTERRUPTS=true
+MAKE_SETTINGS += CAN_BASE_BLOCK_OFFSET_DEFAULT=0x100
+MAKE_SETTINGS += CAN_BASE_NUMBER_OF_IDENTIFIER_PER_MODULE=8
+MAKE_SETTINGS += CAN_BASE_NUMBER_OF_APPLICATION_IDENTIFIER=6
+MAKE_SETTINGS += CAN_BASE_RECEIVE_APPLICATION_IDENTIFIER=false
+MAKE_SETTINGS += CAN_BASE_RECEIVE_OTHER_IDENTIFIER=false
+MAKE_SETTINGS += CAN_MESSAGE_PAYLOAD_LENGTH=64
+MAKE_SETTINGS += CAN_NUMBER_OF_MESSAGES_TRANSMIT_PROTOCOL=4
+MAKE_SETTINGS += CAN_NUMBER_OF_MESSAGES_TRANSMIT_APPLICATION=0
+MAKE_SETTINGS += CAN_NUMBER_OF_MESSAGES_TRANSMIT_OTHER=0
+MAKE_SETTINGS += CAN_NUMBER_OF_MESSAGES_RECEIVE_PROTOCOL=1
+MAKE_SETTINGS += CAN_NUMBER_OF_MESSAGES_RECEIVE_APPLICATION=0
+MAKE_SETTINGS += CAN_NUMBER_OF_MESSAGES_RECEIVE_OTHER=0
+MAKE_SETTINGS += CAN_SUPPORTS_8_MBPS=false
+MAKE_SETTINGS += CLOCK_INDIVIDUAL_NUMBER_OF_CYCLES_PER_SECOND=1000
+MAKE_SETTINGS += CLOCK_INDIVIDUAL_TIMER_NUMBER=3
+MAKE_SETTINGS += CONFIG_NUMBER_OF_REGISTRATIONS=16
+MAKE_SETTINGS += CONFIGURATION_BITS_ICD_CHANNEL=3
+MAKE_SETTINGS += CONFIGURATION_BITS_USE_ALTERNATE_PINS_FOR_I2C1=false
+MAKE_SETTINGS += CONFIGURATION_BITS_USE_ALTERNATE_PINS_FOR_I2C2=false
+MAKE_SETTINGS += CONFIGURATION_BITS_USE_ALTERNATE_PINS_FOR_I2C3=false
+MAKE_SETTINGS += DEFAULT_NUMBER_OF_REGISTRATIONS=9
+MAKE_SETTINGS += EEPROM_I2C_BITRATE_IN_KBPS=1000000
+MAKE_SETTINGS += EEPROM_I2C_DEVICE_ADDRESS=0x50
+MAKE_SETTINGS += EEPROM_I2C_NODE=0
+MAKE_SETTINGS += LED_VARIANT=7
+MAKE_SETTINGS += MAIN_DEBUG_DO_TIMING_ANALYSES_STARTUP=false
+MAKE_SETTINGS += OSCILLATOR_INSTRUCTION_FREQUENCY_IN_HZ=40000000
+MAKE_SETTINGS += OSCILLATOR_SOURCE_FREQUENCY_IN_HZ=10000000
+MAKE_SETTINGS += SECURITY_SIZE_OF_SEED_IN_BYTE=4
+MAKE_SETTINGS += SECURITY_SIZE_OF_KEY_IN_BYTE=4
+MAKE_SETTINGS += STARTUP_FIX_MODULE_NUMBER=1
+MAKE_SETTINGS += STORAGE_MINIMUM_SIZE_PER_BLOCK_IN_BYTE=32
+MAKE_SETTINGS += STORAGE_MAXIMUM_SIZE_PER_BLOCK_IN_BYTE=128
+MAKE_SETTINGS += STORAGE_NUMBER_OF_REGISTRATIONS=8
+MAKE_SETTINGS += STORAGE_BLOCK_CORE_IDENTIFICATION_SIZE_IN_BYTE=128
+MAKE_SETTINGS += STORAGE_BLOCK_CORE_SETTINGS_SIZE_IN_BYTE=64
+MAKE_SETTINGS += STORAGE_BLOCK_APPL_SETTINGS_SIZE_IN_BYTE=128
+MAKE_SETTINGS += STORAGE_BLOCK_APPL_ADJUSTMENT_SMART_SIZE_IN_BYTE=0
+MAKE_SETTINGS += STORAGE_BLOCK_APPL_ADJUSTMENT_CUSTOMER_SIZE_IN_BYTE=0
+
+MAKE_MODULES_CORE += hal_dspic/AdcIntelliprobe
+MAKE_MODULES_CORE += hal_dspic/CallApplicationSwap
+MAKE_MODULES_CORE += hal_dspic/CanFd
+MAKE_MODULES_CORE += hal_dspic/Compiler
+MAKE_MODULES_CORE += hal_dspic/ConfigurationBits
+MAKE_MODULES_CORE += hal_dspic/ControllerIdentification
+MAKE_MODULES_CORE += hal_dspic/Dsp
+MAKE_MODULES_CORE += hal_dspic/Flash
+MAKE_MODULES_CORE += hal_dspic/Gpio
+MAKE_MODULES_CORE += hal_dspic/I2c
+MAKE_MODULES_CORE += hal_dspic/I2cSequence
+MAKE_MODULES_CORE += hal_dspic/Interrupt
+MAKE_MODULES_CORE += hal_dspic/Oscillator
+MAKE_MODULES_CORE += hal_dspic/Reboot
+MAKE_MODULES_CORE += hal_dspic/Semaphore
+MAKE_MODULES_CORE += hal_dspic/Spi
+MAKE_MODULES_CORE += hal_dspic/Stack
+MAKE_MODULES_CORE += hal_dspic/Timer
+MAKE_MODULES_CORE += hal_dspic/Trap
+MAKE_MODULES_CORE += hal_dspic/Uart
+MAKE_MODULES_CORE += middleware/Assert
+MAKE_MODULES_CORE += middleware/CanChannel
+MAKE_MODULES_CORE += middleware/CanMessage
+MAKE_MODULES_CORE += middleware/Config
+MAKE_MODULES_CORE += middleware/Crc
+MAKE_MODULES_CORE += middleware/Debug
+MAKE_MODULES_CORE += middleware/Default
+MAKE_MODULES_CORE += middleware/Error
+MAKE_MODULES_CORE += middleware/Memory
+MAKE_MODULES_CORE += middleware/ModuleNumber
+MAKE_MODULES_CORE += middleware/Operation
+MAKE_MODULES_CORE += middleware/Security
+MAKE_MODULES_CORE += middleware/Storage
+MAKE_MODULES_CORE += middleware/Sync
+MAKE_MODULES_CORE += middleware/Wait
+MAKE_MODULES_CORE += os/Blink
+MAKE_MODULES_CORE += os/Block
+MAKE_MODULES_CORE += os/BlockInfo
+MAKE_MODULES_CORE += os/CanBase
+MAKE_MODULES_CORE += os/CanHelper
+MAKE_MODULES_CORE += os/ClockIndividual
+MAKE_MODULES_CORE += os/Command
+MAKE_MODULES_CORE += os/EepromI2c
+MAKE_MODULES_CORE += os/FlashSession
+MAKE_MODULES_CORE += os/Info
+MAKE_MODULES_CORE += os/Label
+MAKE_MODULES_CORE += os/Led
+MAKE_MODULES_CORE += os/Main
+MAKE_MODULES_CORE += os/Mode
+MAKE_MODULES_CORE += os/RandomTimer
+MAKE_MODULES_CORE += os/SeedKeyClassic
+MAKE_MODULES_CORE += os/SharedRam
+MAKE_MODULES_CORE += os/StackTest
+MAKE_MODULES_CORE += os/Startup
+MAKE_MODULES_CORE += os/SystemTimer
+MAKE_MODULES_CORE += os/Uptime
+
+MAKE_MODULES_PROJECT += Appl
+MAKE_MODULES_PROJECT += ClockCommon
+MAKE_MODULES_PROJECT += Hal
+MAKE_MODULES_PROJECT += Labels
+MAKE_MODULES_PROJECT += StorageId
+
+MAKE_PATH_TO_CORE := ../core
+
+include $(MAKE_PATH_TO_CORE)/make/dspic/build_application.mk
+
+################################################################################
+#  E N D   O F   F I L E                                                       #
+################################################################################
