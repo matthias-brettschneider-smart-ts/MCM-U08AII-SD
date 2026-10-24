@@ -1,0 +1,4 @@
+[submodule "core"]
+	path = core
+	url = https://gitlab.smart-ts.de/products/mcm-io/core.git
+	branch = master
