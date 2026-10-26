@@ -131,7 +131,7 @@ MAKE_MODULES_PROJECT += Hal
 MAKE_MODULES_PROJECT += Labels
 MAKE_MODULES_PROJECT += StorageId
 
-MAKE_PATH_TO_CORE := ../core
+MAKE_PATH_TO_CORE := ../core_4.3.0_selected
 
 include $(MAKE_PATH_TO_CORE)/make/dspic/build_flashloader.mk
 

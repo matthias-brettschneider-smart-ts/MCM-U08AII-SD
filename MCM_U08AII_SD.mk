@@ -20,7 +20,7 @@ MAKE_APPLICATION_PROJECT_NAME := MCM_U08AII_SD_application
 
 MAKE_CONFIGURATION := DSPIC33CK256MP506_1
 
-MAKE_PATH_TO_CORE := core
+MAKE_PATH_TO_CORE := core_4.3.0_selected
 
 include $(MAKE_PATH_TO_CORE)/make/dspic/merge.mk
 
