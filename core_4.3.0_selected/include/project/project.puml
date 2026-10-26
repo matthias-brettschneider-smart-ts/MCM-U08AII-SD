@@ -1,0 +1,14 @@
+@startuml
+
+!include ../../doc/uml/style.puml
+
+package "project" {
+  circle "IApplication" $tag_interface
+  circle "IClockCommon" $tag_interface
+  circle "IHal" $tag_interface
+  circle "IIdentifierConfig" $tag_interface
+  circle "ILabelConfig" $tag_interface
+  circle "IStorageId" $tag_interface
+}
+
+@enduml

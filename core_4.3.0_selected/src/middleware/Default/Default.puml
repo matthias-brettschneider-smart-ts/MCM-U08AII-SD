@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Default"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_state_immutable {
+    .. state ..
+    - registration[]
+    .. registration ..
+    + Register()
+    .. action ..
+    - Reset()
+  }
+}
+
+' realizes
+NAME -up- "IDefault"
+NAME -up- "IDefaultInternal"
+
+' depends on
+NAME --( "IError"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

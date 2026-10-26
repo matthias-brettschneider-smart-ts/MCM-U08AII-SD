@@ -1,0 +1,9 @@
+@startuml
+
+!include hal/hal.puml
+!include middleware/middleware.puml
+!include os/os.puml
+!include project/project.puml
+!include shared/shared.puml
+
+@enduml

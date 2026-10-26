@@ -1,0 +1,41 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Startup"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    + Init()
+    + Synchronize()
+    + SetModuleNumberAndClockMaster()
+    + PostSynchronizationExceeded()
+    + WaitPostSynchronization()
+    + GET_MODULE_NUMBER()
+  }
+}
+
+' realizes
+NAME -up- "IStartup"
+
+' depends on
+NAME --( "IClockCommon"
+NAME --( "IClock"
+NAME --( "ICompiler"
+NAME --( "IConfig"
+NAME --( "IDefault"
+NAME --( "IDsp"
+NAME --( "IError"
+NAME --( "IGeneric"
+NAME --( "IGpio"
+NAME --( "IModuleNumber"
+NAME --( "IPinning"
+NAME --( "ISecurity"
+NAME --( "ISlotDetection"
+NAME --( "IStorage"
+
+remove @unlinked
+
+@enduml

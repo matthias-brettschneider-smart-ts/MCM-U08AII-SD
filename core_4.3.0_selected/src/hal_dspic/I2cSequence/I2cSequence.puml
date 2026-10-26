@@ -1,0 +1,28 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "I2cSequence"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + Start()
+    + UPDATE()
+    + GetState()
+  }
+}
+
+' realizes
+NAME -up- "II2cSequence"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+NAME --( "II2c"
+
+remove @unlinked
+
+@enduml

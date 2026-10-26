@@ -1,0 +1,35 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Uart"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. initialization & configuration ..
+    + Init()
+    + ACTIVATE()
+    + DEACTIVATE()
+    .. status ..
+    + TRANSMISSION_COMPLETED()
+    .. action ..
+    + TRANSMIT_8_BITS()
+    + RECEIVE_8_BITS()
+  }
+}
+
+' realizes
+NAME -up- "IUart"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+NAME --( "IOscillator"
+
+remove @unlinked
+
+@enduml

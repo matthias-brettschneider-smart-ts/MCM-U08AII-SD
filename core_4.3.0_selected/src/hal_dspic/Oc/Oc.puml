@@ -1,0 +1,31 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Oc"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + DISABLE()
+    + ENABLE_FOR_PWM_GENERATION()
+    + IS_ENABLED()
+    + SELECT_TIMER()
+    + SET_INIT_VALUE()
+    + APPLY_INIT_VALUE()
+  }
+}
+
+' realizes
+NAME -up- "IOc"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

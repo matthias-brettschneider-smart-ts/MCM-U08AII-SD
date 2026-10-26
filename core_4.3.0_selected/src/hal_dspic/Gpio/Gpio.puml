@@ -1,0 +1,28 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Gpio"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + INIT()
+    + GET()
+    + SET()
+  }
+}
+
+' realizes
+NAME -up- "IGpio"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

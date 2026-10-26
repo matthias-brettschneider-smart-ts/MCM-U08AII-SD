@@ -1,0 +1,29 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Cn"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + CONFIGURE()
+    + SET_INTERRUPT_PRIORITY()
+    + ENABLE_INTERRUPT()
+    + CONFIRM_INTERRUPT()
+  }
+}
+
+' realizes
+NAME -up- "ICn"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

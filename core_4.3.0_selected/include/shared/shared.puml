@@ -1,0 +1,19 @@
+@startuml
+
+!include ../../doc/uml/style.puml
+
+package "shared" {
+  circle "IAd5667" $tag_interface
+  circle "ICuriosityCk" $tag_interface
+  circle "IDataRate" $tag_interface
+  circle "IFilterMedian" $tag_interface
+  circle "IFilterSma" $tag_interface
+  circle "IFilterType" $tag_interface
+  circle "IMcp4822" $tag_interface
+  circle "INodeOne" $tag_interface
+  circle "INtc" $tag_interface
+  circle "IPhysical" $tag_interface
+  circle "ISample" $tag_interface
+}
+
+@enduml

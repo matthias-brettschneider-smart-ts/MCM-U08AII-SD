@@ -1,0 +1,25 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "StackTest"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. initialization ..
+    + Init()
+  }
+}
+
+' realizes
+NAME -up- "IStackTest"
+
+' depends on
+NAME --( "IConfig"
+NAME --( "IStack"
+
+remove @unlinked
+
+@enduml

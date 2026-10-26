@@ -1,0 +1,38 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Block"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. erase ..
+    + RangeIsAvailableForErase()
+    + Erase()
+    .. write ..
+    + RangeIsAvailableForWrite()
+    + Write()
+    .. check ..
+    + RangeIsAvailableForCheck()
+    + Check()
+    + CheckFlashloaderBlocks()
+    + CheckApplicationBlocks()
+  }
+}
+
+' realizes
+NAME -up- "IBlock"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IBlockInfo"
+NAME --( "IConfig"
+NAME --( "ICrc"
+NAME --( "IFlash"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

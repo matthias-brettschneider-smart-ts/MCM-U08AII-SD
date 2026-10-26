@@ -1,0 +1,27 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Led"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + SIGNAL_PERMANENT_ERROR()
+    + SET()
+  }
+}
+
+' realizes
+NAME -up- "ILed"
+
+' depends on
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+NAME --( "IGpio"
+NAME --( "IPinning"
+
+remove @unlinked
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Semaphore"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. mutex ..
+    + TRY_TO_LOCK_MUTEX()
+    + RELEASE_MUTEX()
+  }
+}
+
+' realizes
+NAME -up- "ISemaphore"
+
+' depends on
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IError"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

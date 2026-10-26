@@ -1,0 +1,44 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Error"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    .. state ..
+    - verbose_level
+    - occurence_order
+    - write_mutex
+    - log
+    .. initialization ..
+    - InitFirst()
+    - InitSecond()
+    .. add & get ..
+    + AddEntry()
+    - GetHighestCategory()
+  }
+}
+
+' realizes
+NAME -up- "IError"
+NAME -up- "IErrorInternal"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IBlink"
+NAME --( "IConfig"
+NAME --( "IDefault"
+NAME --( "IGeneric"
+NAME --( "IInterrupt"
+NAME --( "ILed"
+NAME --( "IMemory"
+NAME --( "IProtocol"
+NAME --( "ISemaphore"
+NAME --( "IStorage"
+
+remove @unlinked
+
+@enduml

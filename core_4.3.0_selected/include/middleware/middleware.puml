@@ -1,0 +1,42 @@
+@startuml
+
+!include ../../doc/uml/style.puml
+
+package "middleware" {
+  circle "IAssert" $tag_interface
+  circle "ICanChannel" $tag_interface
+  circle "ICanMessage" $tag_interface
+  circle "IConfig" $tag_interface
+  circle "IConfigId" $tag_interface
+  circle "IConfigInternal" $tag_interface
+  circle "IConfigType" $tag_interface
+  circle "ICrc" $tag_interface
+  circle "IDebug" $tag_interface
+  circle "IDefault" $tag_interface
+  circle "IDefaultInternal" $tag_interface
+  circle "IDsm" $tag_interface
+  circle "IDsmInternal" $tag_interface
+  circle "IError" $tag_interface
+  circle "IErrorId" $tag_interface
+  circle "IErrorInternal" $tag_interface
+  circle "IFifo" $tag_interface
+  circle "IGeneric" $tag_interface
+  circle "IIdentifierId" $tag_interface
+  circle "ILabelId" $tag_interface
+  circle "ILabelType" $tag_interface
+  circle "IMemory" $tag_interface
+  circle "IModeId" $tag_interface
+  circle "IModuleNumber" $tag_interface
+  circle "IOperation" $tag_interface
+  circle "IOperationInternal" $tag_interface
+  circle "ISecurity" $tag_interface
+  circle "ISecurityInternal" $tag_interface
+  circle "ISecurityLevel" $tag_interface
+  circle "IStorage" $tag_interface
+  circle "IStorageBlock" $tag_interface
+  circle "IStorageInternal" $tag_interface
+  circle "ISync" $tag_interface
+  circle "IWait" $tag_interface
+}
+
+@enduml

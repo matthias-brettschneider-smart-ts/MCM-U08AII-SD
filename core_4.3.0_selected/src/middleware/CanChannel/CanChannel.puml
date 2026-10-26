@@ -1,0 +1,31 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "CanChannel"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. application ..
+    + ReceiveApplication()
+    + TransmitApplication()
+    .. protocol ..
+    - ReceiveRequest()
+    - TransmitResponse()
+  }
+}
+
+' realizes
+NAME -up- "ICanChannel"
+
+' depends on
+NAME --( "ICanBase"
+NAME --( "ICanMessage"
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

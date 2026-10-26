@@ -1,0 +1,29 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "AdcIntelliprobe"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless $tag_dspic {
+    + Init()
+    + AcquireSingleChannel()
+  }
+}
+
+' realizes
+NAME -up- "IAdc"
+
+' depends on
+NAME --( "IController"
+NAME --( "IOscillator"
+NAME --( "IAssert"
+NAME --( "IError"
+NAME --( "IGeneric"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

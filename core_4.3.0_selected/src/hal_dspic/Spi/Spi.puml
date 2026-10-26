@@ -1,0 +1,46 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Spi"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. initialization & configuration ..
+    + Init()
+    + SET_SIGNAL_LOGIC()
+    + SET_BITRATE()
+    + SET_WORD_LENGTH()
+    + USE_FRAMED_COMMUNICATION()
+    + ACTIVATE()
+    + DEACTIVATE()
+    .. status ..
+    + IS_INTERRUPT_PENDING()
+    + TRANSMIT_BUFFER_IS_FULL()
+    + RECEIVE_BUFFER_IS_FULL()
+    .. action ..
+    + FLUSH()
+    + TRANSMIT_16_BITS()
+    + RECEIVE_16_BITS()
+    + TRANSCEIVE_16_BITS()
+    + CONFIRM_INTERRUPT()
+  }
+}
+
+' realizes
+NAME -up- "ISpi"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IError"
+NAME --( "IGeneric"
+NAME --( "IOscillator"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

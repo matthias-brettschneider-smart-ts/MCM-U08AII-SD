@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Mode"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + Init()
+    + Get()
+    + Set()
+  }
+}
+
+' realizes
+NAME -up- "IMode"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IConfig"
+NAME --( "IOperation"
+NAME --( "IOperationInternal"
+NAME --( "ISecurity"
+NAME --( "ISecurityInternal"
+
+remove @unlinked
+
+@enduml

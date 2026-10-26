@@ -1,0 +1,36 @@
+@startuml
+
+!include ../../doc/uml/style.puml
+
+package "os" {
+  circle "IBlink" $tag_interface
+  circle "IBlock" $tag_interface
+  circle "IBlockInfo" $tag_interface
+  circle "IBus" $tag_interface
+  circle "ICanBase" $tag_interface
+  circle "IClock" $tag_interface
+  circle "IClockBase" $tag_interface
+  circle "IClockHigh" $tag_interface
+  circle "IEcDsa" $tag_interface
+  circle "IEeprom" $tag_interface
+  circle "IFlashSession" $tag_interface
+  circle "IHeap" $tag_interface
+  circle "IIdentifier" $tag_interface
+  circle "IInfo" $tag_interface
+  circle "IIsoTp" $tag_interface
+  circle "ILabel" $tag_interface
+  circle "ILed" $tag_interface
+  circle "IMain" $tag_interface
+  circle "IMode" $tag_interface
+  circle "IProtocol" $tag_interface
+  circle "IRandomPseudo" $tag_interface
+  circle "ISeedKey" $tag_interface
+  circle "ISharedRam" $tag_interface
+  circle "ISlotDetection" $tag_interface
+  circle "IStackTest" $tag_interface
+  circle "IStartup" $tag_interface
+  circle "ISystemTimer" $tag_interface
+  circle "IUptime" $tag_interface
+}
+
+@enduml

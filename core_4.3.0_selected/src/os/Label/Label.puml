@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Label"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. access ..
+    + GetValue()
+    + SetValue()
+  }
+}
+
+' realizes
+NAME -up- "ILabel"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IConfigInternal"
+NAME --( "IGeneric"
+NAME --( "ILabelConfig"
+NAME --( "IMode"
+
+remove @unlinked
+
+@enduml

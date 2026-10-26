@@ -1,0 +1,42 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Wait"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. information ..
+    + GET_TICKS_FOR_US_16()
+    + GET_TICKS_FOR_US_32()
+    + GET_TICKS_FOR_MS_32()
+    .. status ..
+    + GET_TIMER_VALUE_16()
+    + GET_TIMER_VALUE_32()
+    .. relative waiting ..
+    + WAIT_US_16()
+    + WAIT_US_32()
+    + WAIT_MS_32()
+    .. absolute waiting ..
+    + WAIT_US()
+    + WAIT_MS()
+    .. timeout monitoring ..
+    + CHECK_TIMEOUT_US_16()
+    + CHECK_TIMEOUT_US_32()
+    + CHECK_TIMEOUT_MS_32()
+  }
+}
+
+' realizes
+NAME -up- "IWait"
+
+' depends on
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+NAME --( "ISystemTimer"
+
+remove @unlinked
+
+@enduml

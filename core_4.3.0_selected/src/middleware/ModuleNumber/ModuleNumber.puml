@@ -1,0 +1,25 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "ModuleNumber"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + GET()
+  }
+}
+
+' realizes
+NAME -up- "IModuleNumber"
+
+' depends on
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+NAME --( "IStartup"
+
+remove @unlinked
+
+@enduml

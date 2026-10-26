@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "SeedKeyNone"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. initialization ..
+    + Init()
+    .. seed ..
+    + CreateSeed()
+    .. key ..
+    + ValidForOperator()
+    + ValidForMaintenance()
+    + ValidForManufacturer()
+  }
+}
+
+' realizes
+NAME -up- "ISeedKey"
+
+' depends on
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

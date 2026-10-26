@@ -1,0 +1,41 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Command"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. initialization ..
+    + Init()
+    .. status ..
+    + IsProgrammingInProgress()
+    .. action ..
+    + SendWelcome()
+    + SendError()
+    + Handler()
+  }
+}
+
+' realizes
+NAME -up- "IProtocol"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICanChannel"
+NAME --( "ICanMessage"
+NAME --( "IDefaultInternal"
+NAME --( "IFlashSession"
+NAME --( "IGeneric"
+NAME --( "ILabelId"
+NAME --( "ILabel"
+NAME --( "IMemory"
+NAME --( "IMode"
+NAME --( "IReboot"
+NAME --( "IStorageInternal"
+
+remove @unlinked
+
+@enduml

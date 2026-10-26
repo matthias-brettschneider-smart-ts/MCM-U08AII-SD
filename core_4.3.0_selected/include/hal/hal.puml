@@ -1,0 +1,33 @@
+@startuml
+
+!include ../../doc/uml/style.puml
+
+package "hal" {
+  circle "IAdc" $tag_interface
+  circle "ICallApplication" $tag_interface
+  circle "ICan" $tag_interface
+  circle "ICn" $tag_interface
+  circle "ICompiler" $tag_interface
+  circle "IConfigurationBits" $tag_interface
+  circle "IController" $tag_interface
+  circle "IControllerIdentification" $tag_interface
+  circle "IDma" $tag_interface
+  circle "IDsp" $tag_interface
+  circle "IFlash" $tag_interface
+  circle "IGpio" $tag_interface
+  circle "IInt" $tag_interface
+  circle "II2c" $tag_interface
+  circle "II2cSequence" $tag_interface
+  circle "IInterrupt" $tag_interface
+  circle "IOc" $tag_interface
+  circle "IOscillator" $tag_interface
+  circle "IPinning" $tag_interface
+  circle "IReboot" $tag_interface
+  circle "ISemaphore" $tag_interface
+  circle "ISpi" $tag_interface
+  circle "IStack" $tag_interface
+  circle "ITimer" $tag_interface
+  circle "IUart" $tag_interface
+}
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Sample"
+!define BELONGS "shared"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + CONVERT_TO_16_BIT()
+  }
+}
+
+' realizes
+NAME -up- "ISample"
+
+' depends on
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

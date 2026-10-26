@@ -1,0 +1,45 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "CanBase"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_dspic {
+    .. state ..
+    - bit_rate[]
+    - id[]
+    - transmit[]
+    - storage_test
+    .. initialization & configuration ..
+    + Init()
+    + UpdateIdentifier()
+    + AllowApplicationTransmissions()
+    .. communication ..
+    + ReceiveRequest()
+    + TransmitResponse()
+    + ReceiveApplication()
+    + TransmitApplication()
+  }
+}
+
+' realizes
+NAME -up- "ICanBase"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICan"
+NAME --( "ICanMessage"
+NAME --( "IConfig"
+NAME --( "IDefault"
+NAME --( "IError"
+NAME --( "IGeneric"
+NAME --( "IModuleNumber"
+NAME --( "IStorage"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

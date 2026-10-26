@@ -1,0 +1,32 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Trap"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + _OscillatorFail()
+    + _AddressError()
+    + _StackError()
+    + _MathError()
+    + _HardTrapError()
+    + _SoftTrapError()
+    + _ReservedTrap5()
+    + _ReservedTrap7()
+  }
+}
+
+' realizes
+
+' depends on
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+NAME --( "ILed"
+
+remove @unlinked
+
+@enduml

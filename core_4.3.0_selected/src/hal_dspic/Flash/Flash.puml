@@ -1,0 +1,50 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Flash"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    .. state ..
+    - mutex
+    - disable_interrupts
+    .. access ..
+    + Aquire()
+    + Release()
+    .. information ..
+    + GetRowSize()
+    + GetPageSize()
+    + AddressesOneOrMultipleRows()
+    + AddressesOneOrMultiplePages()
+    + BlankCheckPage()
+    .. erase ..
+    + ErasePage()
+    .. read ..
+    + Read32Bit()
+    + Read()
+    .. write ..
+    + Write32Bit()
+    + Write64Bit()
+    + WriteRow()
+  }
+}
+
+' realizes
+NAME -up- "IFlash"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IController"
+NAME --( "ICompiler"
+NAME --( "IError"
+NAME --( "IGeneric"
+NAME --( "IInterrupt"
+NAME --( "ISemaphore"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

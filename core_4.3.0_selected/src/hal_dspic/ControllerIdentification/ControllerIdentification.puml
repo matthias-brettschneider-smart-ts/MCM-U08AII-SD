@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "ControllerIdentification"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. information ..
+    + GetDeviceId()
+    + GetDeviceRevision()
+    .. check ..
+    + Check()
+  }
+}
+
+' realizes
+NAME -up- "IControllerIdentification"
+
+' depends on
+NAME --( "IController"
+NAME --( "IError"
+NAME --( "IFlash"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

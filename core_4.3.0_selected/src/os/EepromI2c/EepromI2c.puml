@@ -1,0 +1,35 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "EepromI2c"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. initialization ..
+    + Init()
+    .. information ..
+    + GetPageSize()
+    + GetEepromSize()
+    .. access ..
+    + Read()
+    + Write()
+  }
+}
+
+' realizes
+NAME -up- "IEeprom"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IError"
+NAME --( "IGeneric"
+NAME --( "II2c"
+NAME --( "II2cSequence"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

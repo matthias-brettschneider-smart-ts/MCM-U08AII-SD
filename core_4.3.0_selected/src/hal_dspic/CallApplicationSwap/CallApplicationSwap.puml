@@ -1,0 +1,22 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "CallApplicationSwap"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + Now()
+  }
+}
+
+' realizes
+NAME -up- "ICallApplication"
+
+' depends on
+
+remove @unlinked
+
+@enduml

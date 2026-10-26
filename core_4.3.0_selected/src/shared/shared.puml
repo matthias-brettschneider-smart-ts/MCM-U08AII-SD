@@ -1,0 +1,12 @@
+@startuml
+
+!include Sample/Sample.puml
+!include Physical/Physical.puml
+!include Ntc/Ntc.puml
+!include Mcp4822/Mcp4822.puml
+!include FilterSma/FilterSma.puml
+!include FilterMedian/FilterMedian.puml
+!include DataRate/DataRate.puml
+!include Ad5667/Ad5667.puml
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Blink"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    + Update()
+  }
+}
+
+' realizes
+NAME -up- "IBlink"
+
+' depends on
+NAME --( "IErrorInternal"
+NAME --( "IGeneric"
+NAME --( "ILed"
+NAME --( "IOperation"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

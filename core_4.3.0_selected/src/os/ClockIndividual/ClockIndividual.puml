@@ -1,0 +1,40 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "ClockIndividual"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. state ..
+    - cycle_start_in_ticks
+    - count_cycle
+    .. information ..
+    + GET_CYCLES_PER_SECOND()
+    + GET_CYCLE_START_IN_TICKS()
+    + GET_CYCLE_NUMBER()
+    .. signal control ..
+    + StartSignalReception()
+    + StartSignalGeneration()
+    + StopSignalGeneration()
+    .. monitoring ..
+    + CheckState()
+  }
+}
+
+' realizes
+NAME -up- "IClock"
+
+' depends on
+NAME --( "IApplication"
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+NAME --( "IProtocol"
+NAME --( "ITimer"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

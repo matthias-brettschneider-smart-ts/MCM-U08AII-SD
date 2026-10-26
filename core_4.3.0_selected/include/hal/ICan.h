@@ -1,0 +1,67 @@
+/*-----------------------------------------------------------------------------+
+|                                                                              |
+|                         |\    /|   /- - -  |\    /|                          |
+|                         | \  / |  |        | \  / |                          |
+|                         |  \/  |  |        |  \/  |                          |
+|                         |      |   \_ _ _  |      |                          |
+|                                                                              |
+|                                                                              |
+|         T H E   S M A R T   M E A S U R E M E N T   S O L U T I O N          |
+|                                                                              |
++------------------------------------------------------------------------------+
+|             (c) SMART TESTSOLUTIONS GmbH - all rights reserved               |
++-----------------------------------------------------------------------------*/
+#pragma once
+
+/*============================================================================*/
+/* I N C L U D E S                                                            */
+/*============================================================================*/
+
+#include "hal/ICompiler.h"
+#include "middleware/ICanMessage.h"
+#include "middleware/IGeneric.h"
+
+/*============================================================================*/
+/* D E F I N E S  /  T Y P E D E F S                                          */
+/*============================================================================*/
+
+/*============================================================================*/
+/* I N L I N E   F U N C T I O N S                                            */
+/*============================================================================*/
+
+/*============================================================================*/
+/* D E C L A R A T I O N   -   E X T E R N                                    */
+/*============================================================================*/
+
+/*============================================================================*/
+/* D E C L A R A T I O N   -   P R O T O T Y P E S                            */
+/*============================================================================*/
+
+void CanInit(void);
+
+COMPILER_INLINE uint8_t CAN_GET_NUMBER_OF_NODES(void);
+COMPILER_INLINE uint8_t CAN_GET_NUMBER_OF_FIFOS(void);
+
+COMPILER_INLINE bool CAN_SUPPORTS_FD(void);
+COMPILER_INLINE bool CAN_SUPPORTS_BITRATE(const bool data_not_nominal, const uint16_t bitrate_in_kbps);
+
+void CanInitNode(const uint8_t node);
+
+bool CanSetNominalBitrate(const uint8_t node, const uint16_t bitrate_in_kbps);
+bool CanSetDataBitrate(const uint8_t node, const uint16_t bitrate_in_kbps);
+bool CanSetAcceptanceFilter(const uint8_t node, const uint8_t filter, const uint16_t identifier, const uint8_t fifo);
+
+bool CanTransmitMessage(const uint8_t node, const uint8_t fifo, const t_CAN_MESSAGE * const message);
+bool CanReceiveMessage(const uint8_t node, const uint8_t fifo, t_CAN_MESSAGE * const message);
+
+void CanTrigger(void);
+
+/*============================================================================*/
+/*  I M P L E M E N T A T I O N                                               */
+/*============================================================================*/
+
+#include "CanImpl.h"
+
+/*============================================================================*/
+/* E N D   O F   F I L E                                                      */
+/*============================================================================*/

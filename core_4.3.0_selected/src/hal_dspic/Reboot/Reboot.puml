@@ -1,0 +1,25 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Reboot"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. action ..
+    + Execute()
+  }
+}
+
+' realizes
+NAME -up- "IReboot"
+
+' depends on
+NAME --( "IController"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

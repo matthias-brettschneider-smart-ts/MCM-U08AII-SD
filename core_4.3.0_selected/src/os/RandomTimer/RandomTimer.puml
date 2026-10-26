@@ -1,0 +1,26 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "RandomTimer"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. action ..
+    + Get()
+  }
+}
+
+' realizes
+NAME -up- "IRandomPseudo"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IGeneric"
+NAME --( "ISystemTimer"
+
+remove @unlinked
+
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "CanFd"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless $tag_dspic {
+    .. information ..
+    + GET_NUMBER_OF_NODES()
+    + GET_NUMBER_OF_FIFOS()
+    + SUPPORTS_FD()
+    + SUPPORTS_BITRATE()
+    .. initialization & configuration ..
+    + Init()
+    + InitNode()
+    + SetNominalBitrate()
+    + SetDataBitrate()
+    + SetAcceptanceFilter()
+    .. communication ..
+    + TransmitMessage()
+    + ReceiveMessage()
+    + Trigger()
+  }
+}
+
+' realizes
+NAME -up- "ICan"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICanMessage"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+NAME --( "IOscillator"
+
+remove @unlinked
+
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Stack"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. information ..
+    + GetStackLimit()
+    .. status ..
+    + GetStackPointer()
+    + IsInitializedEmpty()
+    .. action ..
+    + InitializeEmpty()
+    + GetNumberOfUnusedBytes()
+  }
+}
+
+' realizes
+NAME -up- "IStack"
+
+' depends on
+
+remove @unlinked
+
+@enduml

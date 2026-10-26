@@ -1,0 +1,42 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Info"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    .. state ..
+    - serial_number
+    - production_date
+    - hardware_type
+    - hardware_version
+    - hardware_variant
+    - firmware_type
+    - firmware_version
+    - firmware_variant
+    - core_version
+    - identification_smart
+    - identification_customer
+    .. initialization ..
+    + Init()
+  }
+}
+
+' realizes
+NAME -up- "IInfo"
+
+' depends on
+NAME --( "IConfig"
+NAME --( "IDefault"
+NAME --( "IControllerIdentification"
+NAME --( "IGeneric"
+NAME --( "IHeap"
+NAME --( "ISecurity"
+NAME --( "IStorage"
+
+remove @unlinked
+
+@enduml

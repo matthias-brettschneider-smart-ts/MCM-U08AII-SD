@@ -1,0 +1,31 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Interrupt"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. enable/disable ..
+    + ENABLE()
+    + DISABLE()
+    .. priority ..
+    + GET_CURRENT_PRIORITY_LEVEL()
+    + SET_CURRENT_PRIORITY_LEVEL()
+  }
+}
+
+' realizes
+NAME -up- "IInterrupt"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+
+!include Uart/Uart.puml
+!include Trap/Trap.puml
+!include Timer/Timer.puml
+!include Stack/Stack.puml
+!include Spi/Spi.puml
+!include Semaphore/Semaphore.puml
+!include Reboot/Reboot.puml
+!include Oscillator/Oscillator.puml
+!include Oc/Oc.puml
+!include Interrupt/Interrupt.puml
+!include Int/Int.puml
+!include I2cSequence/I2cSequence.puml
+!include I2c/I2c.puml
+!include Gpio/Gpio.puml
+!include Flash/Flash.puml
+!include Ecan/Ecan.puml
+!include Dsp/Dsp.puml
+!include Dma/Dma.puml
+!include ControllerIdentification/ControllerIdentification.puml
+!include ConfigurationBits/ConfigurationBits.puml
+!include Compiler/Compiler.puml
+!include Cn/Cn.puml
+!include CanFd/CanFd.puml
+!include CallApplicationSwap/CallApplicationSwap.puml
+!include CallApplicationJump/CallApplicationJump.puml
+!include AdcIntelliprobe/AdcIntelliprobe.puml
+!include AdcCards/AdcCards.puml
+
+@enduml

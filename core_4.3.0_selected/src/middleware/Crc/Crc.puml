@@ -1,0 +1,27 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Crc"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. crc 16 ..
+    + InitCrc16()
+    + UpdateCrc16()
+    + GetCrc16()
+  }
+}
+
+' realizes
+NAME -up- "ICrc"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

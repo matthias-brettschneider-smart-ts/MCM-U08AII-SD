@@ -1,0 +1,24 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "ConfigurationBits"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless $tag_dspic {
+    + EnsureConsideration()
+  }
+}
+
+' realizes
+NAME -up- "IConfigurationBits"
+
+' depends on
+NAME --( "IController"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Sync"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. information ..
+    + GET_CYCLES_PER_SECOND()
+    .. status ..
+    + GET_CYCLE_NUMBER()
+    + GET_CYCLE_START_IN_TICKS_16()
+    + GET_CYCLE_START_IN_TICKS_32()
+  }
+}
+
+' realizes
+NAME -up- "ISync"
+
+' depends on
+NAME --( "IClock"
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

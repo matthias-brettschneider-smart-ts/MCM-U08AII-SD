@@ -1,0 +1,26 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Assert"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + STATIC()
+    + FATAL()
+  }
+}
+
+' realizes
+NAME -up- "IAssert"
+
+' depends on
+NAME --( "ICompiler"
+NAME --( "IError"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

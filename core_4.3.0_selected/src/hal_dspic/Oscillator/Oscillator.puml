@@ -1,0 +1,27 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Oscillator"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + Init()
+    + GET_INSTRUCTION_FREQUENCY_IN_HZ()
+  }
+}
+
+' realizes
+NAME -up- "IOscillator"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IController"
+NAME --( "IError"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

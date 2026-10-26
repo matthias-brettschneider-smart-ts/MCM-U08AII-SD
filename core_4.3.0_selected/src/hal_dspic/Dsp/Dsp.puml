@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Dsp"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. math ..
+    + MULTIPLY_U16_U16()
+    + MULTIPLY_U16_S16()
+    + MULTIPLY_S16_U16()
+    + MULTIPLY_S16_S16()
+    + DIVIDE_SIGNED()
+    + DIVIDE_SIGNED_REMAINDER()
+    + DIVIDE_UNSIGNED()
+    + DIVIDE_UNSIGNED_REMAINDER()
+  }
+}
+
+' realizes
+NAME -up- "IDsp"
+
+' depends on
+
+remove @unlinked
+
+@enduml

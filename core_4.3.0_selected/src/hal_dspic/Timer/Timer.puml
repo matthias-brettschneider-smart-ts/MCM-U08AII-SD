@@ -1,0 +1,47 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Timer"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. information ..
+    + SUPPORTS_32_BIT()
+    .. configuration ..
+    + SET_FREQUENCY()
+    + SET_PERIOD_16()
+    + SET_PERIOD_16_UPPER()
+    + GET_PERIOD_16()
+    + GET_PERIOD_16_UPPER()
+    + SET_VALUE_16()
+    + SET_VALUE_16_UPPER()
+    + GET_VALUE_16()
+    + GET_VALUE_16_UPPER()
+    + SET_INTERRUPT_PRIORITY()
+    + CONCATENATE_WITH_NEXT()
+    .. action ..
+    + START()
+    + STOP()
+    + ENABLE_INTERRUPT()
+    + DISABLE_INTERRUPT()
+    + CONFIRM_INTERRUPT()
+    + WAIT_ONE_TICK()
+  }
+}
+
+' realizes
+NAME -up- "ITimer"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+NAME --( "IOscillator"
+
+remove @unlinked
+
+@enduml

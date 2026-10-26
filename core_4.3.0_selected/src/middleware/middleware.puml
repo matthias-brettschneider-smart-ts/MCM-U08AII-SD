@@ -1,0 +1,21 @@
+@startuml
+
+!include Wait/Wait.puml
+!include Sync/Sync.puml
+!include Storage/Storage.puml
+!include Security/Security.puml
+!include Operation/Operation.puml
+!include ModuleNumber/ModuleNumber.puml
+!include Memory/Memory.puml
+!include Fifo/Fifo.puml
+!include Error/Error.puml
+!include Dsm/Dsm.puml
+!include Default/Default.puml
+!include Debug/Debug.puml
+!include Crc/Crc.puml
+!include Config/Config.puml
+!include CanMessage/CanMessage.puml
+!include CanChannel/CanChannel.puml
+!include Assert/Assert.puml
+
+@enduml

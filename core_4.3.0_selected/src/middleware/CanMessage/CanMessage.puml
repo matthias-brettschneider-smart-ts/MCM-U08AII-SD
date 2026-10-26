@@ -1,0 +1,24 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "CanMessage"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + GetLength()
+    + GetDlc()
+  }
+}
+
+' realizes
+NAME -up- "ICanMessage"
+
+' depends on
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

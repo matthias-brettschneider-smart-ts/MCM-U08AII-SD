@@ -1,0 +1,38 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Config"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_state_immutable {
+    .. state ..
+    - registration[]
+    .. information ..
+    - IsAvailable()
+    - GetType()
+    - GetSize()
+    .. registration ..
+    + Register()
+    .. access ..
+    - ReadValue()
+    - ReadValueReverse()
+    - WriteValue()
+    - WriteValueReverse()
+  }
+}
+
+' realizes
+NAME -up- "IConfigInternal"
+NAME -up- "IConfig"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IError"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

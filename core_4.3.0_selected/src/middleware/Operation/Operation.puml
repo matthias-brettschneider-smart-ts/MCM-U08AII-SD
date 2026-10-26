@@ -1,0 +1,37 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Operation"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    .. state ..
+    - active
+    - auto_operation
+    .. initialization ..
+    - Init()
+    - ApplyAutoOperation()
+    .. status ..
+    + IsRunning()
+    .. action ..
+    - Start()
+    - Stop()
+  }
+}
+
+' realizes
+NAME -up- "IOperation"
+NAME -up- "IOperationInternal"
+
+' depends on
+NAME --( "IConfig"
+NAME --( "IDefault"
+NAME --( "IGeneric"
+NAME --( "IStorage"
+
+remove @unlinked
+
+@enduml

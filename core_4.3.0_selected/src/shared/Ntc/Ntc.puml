@@ -1,0 +1,22 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Ntc"
+!define BELONGS "shared"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + TemperatureGet()
+  }
+}
+
+' realizes
+NAME -up- "INtc"
+
+' depends on
+
+remove @unlinked
+
+@enduml

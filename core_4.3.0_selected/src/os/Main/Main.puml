@@ -1,0 +1,46 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Main"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + main()
+  }
+}
+
+' realizes
+NAME -up- "IMain"
+
+' depends on
+NAME --( "IApplication"
+NAME --( "IBlink"
+NAME --( "ICanChannel"
+NAME --( "IClock"
+NAME --( "IConfig"
+NAME --( "IConfigurationBits"
+NAME --( "IControllerIdentification"
+NAME --( "ICrc"
+NAME --( "IError"
+NAME --( "IErrorInternal"
+NAME --( "IHal"
+NAME --( "IInfo"
+NAME --( "IModuleNumber"
+NAME --( "IOperation"
+NAME --( "IOperationInternal"
+NAME --( "IOscillator"
+NAME --( "IProtocol"
+NAME --( "ISharedRam"
+NAME --( "ISecurity"
+NAME --( "ISlotDetection"
+NAME --( "IStackTest"
+NAME --( "IStartup"
+NAME --( "ISync"
+NAME --( "IUptime"
+
+remove @unlinked
+
+@enduml

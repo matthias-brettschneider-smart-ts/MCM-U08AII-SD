@@ -1,0 +1,48 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "I2c"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    .. state ..
+    - mutex
+    .. access ..
+    + Acquire()
+    + Release()
+    .. configuration ..
+    + SetBitrate()
+    + SetSizeOfDeviceAddress()
+    + Enable()
+    + Disable()
+    .. status ..
+    + IsActive()
+    .. action ..
+    + GOT_INTERRUPT()
+    + SEND_START_CONDITION()
+    + REPEATE_START_CONDITION()
+    + SEND_STOP_CONDITION()
+    + START_TRANSMISSION()
+    + GOT_ACKNOWLEDGE()
+    + START_RECEPTION()
+    + GET_RECEIVED()
+    + SEND_ACKNOWLEDGE()
+  }
+}
+
+' realizes
+NAME -up- "II2c"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IController"
+NAME --( "IGeneric"
+NAME --( "IOscillator"
+NAME --( "ISemaphore"
+
+remove @unlinked
+
+@enduml

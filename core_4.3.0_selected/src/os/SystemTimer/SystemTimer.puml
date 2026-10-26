@@ -1,0 +1,33 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "SystemTimer"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. initialization ..
+    + Init()
+    .. information ..
+    + GET_TICKS_FOR_US_16()
+    + GET_TICKS_FOR_US_32()
+    + GET_TICKS_FOR_MS_32()
+    .. status ..
+    + GET_TICKS_16()
+    + GET_TICKS_32()
+  }
+}
+
+' realizes
+NAME -up- "ISystemTimer"
+
+' depends on
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+NAME --( "ITimer"
+
+remove @unlinked
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Debug"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. debug pin ..
+    + ACTIVATE_DEBUG_PIN()
+    + INTERRUPT_DEBUG_PIN()
+    + DEACTIVATE_DEBUG_PIN()
+  }
+}
+
+' realizes
+NAME -up- "IDebug"
+
+' depends on
+NAME --( "ICompiler"
+NAME --( "IGeneric"
+NAME --( "IGpio"
+NAME --( "IPinning"
+NAME --( "ITimer"
+
+remove @unlinked
+
+@enduml

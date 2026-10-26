@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Int"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + ENABLE()
+    + DISABLE()
+    + SET_POLARITY()
+    + SET_PRIORITY()
+    + CONFIRM()
+  }
+}
+
+' realizes
+NAME -up- "IInt"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IController"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

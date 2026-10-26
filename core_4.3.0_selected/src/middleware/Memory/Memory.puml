@@ -1,0 +1,31 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Memory"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + SWAP_UINT16()
+    + SWAP_UINT32()
+    + GET_UINT16()
+    + GET_UINT32()
+    + GET_UINT16_REVERSE()
+    + GET_UINT32_REVERSE()
+    + CopyReverse()
+  }
+}
+
+' realizes
+NAME -up- "IMemory"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IGeneric"
+NAME --( "ICompiler"
+
+remove @unlinked
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Uptime"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    + Init()
+    + Update()
+  }
+}
+
+' realizes
+NAME -up- "IUptime"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IConfig"
+NAME --( "IGeneric"
+NAME --( "ISharedRam"
+NAME --( "IStorage"
+NAME --( "IStorageInternal"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

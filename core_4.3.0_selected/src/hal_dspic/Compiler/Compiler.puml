@@ -1,0 +1,29 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Compiler"
+!define BELONGS "hal"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + INLINE
+    + DO_NOT_OPTIMIZE
+    + ISR
+    + DMA_RAM
+    + SHARED_RAM
+    + PACKED
+    + ALIGNED_2_BYTE
+    + ALIGNED_4_BYTE
+  }
+}
+
+' realizes
+NAME -up- "ICompiler"
+
+' depends on
+
+remove @unlinked
+
+@enduml

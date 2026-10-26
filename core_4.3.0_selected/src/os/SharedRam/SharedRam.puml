@@ -1,0 +1,36 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "SharedRam"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    .. initialization ..
+    + Init()
+    .. flags ..
+    + FlagGet()
+    + FlagSet()
+    .. variables ..
+    + VariableGet()
+    + VariableSet()
+    + VariableInc()
+  }
+}
+
+' realizes
+NAME -up- "ISharedRam"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "ICompiler"
+NAME --( "IConfig"
+NAME --( "ICrc"
+NAME --( "IGeneric"
+NAME --( "IMemory"
+
+remove @unlinked
+
+@enduml

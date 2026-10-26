@@ -1,0 +1,43 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Security"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    .. state ..
+    - current_level
+    - seed_valid
+    - brute_force_timer
+    - seed
+    - key
+    .. information ..
+    - GetSizeOfSeed()
+    - GetSizeOfKey()
+    .. status ..
+    + GetCurrentLevel()
+    .. action ..
+    - GetSeed()
+    - SetKey()
+    - SetLevel()
+    - Lock()
+  }
+}
+
+' realizes
+NAME -up- "ISecurity"
+NAME -up- "ISecurityInternal"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IError"
+NAME --( "IGeneric"
+NAME --( "ISeedKey"
+NAME --( "IWait"
+
+remove @unlinked
+
+@enduml

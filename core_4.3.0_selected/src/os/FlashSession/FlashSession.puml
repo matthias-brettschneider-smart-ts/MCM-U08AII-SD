@@ -1,0 +1,31 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "FlashSession"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module {
+    .. individual ..
+    + Erase()
+    + Check()
+    .. session ..
+    + Start()
+    + IsActive()
+    + Transfer()
+    + Program()
+  }
+}
+
+' realizes
+NAME -up- "IFlashSession"
+
+' depends on
+NAME --( "IBlock"
+NAME --( "IError"
+
+remove @unlinked
+
+@enduml

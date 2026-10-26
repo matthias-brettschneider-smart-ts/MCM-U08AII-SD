@@ -1,0 +1,25 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "BlockInfo"
+!define BELONGS "os"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_stateless {
+    + Init()
+    + Get()
+  }
+}
+
+' realizes
+NAME -up- "IBlockInfo"
+
+' depends on
+NAME --( "IConfig"
+NAME --( "IGeneric"
+
+remove @unlinked
+
+@enduml

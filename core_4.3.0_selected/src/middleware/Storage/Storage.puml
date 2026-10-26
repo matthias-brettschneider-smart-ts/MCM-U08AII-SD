@@ -1,0 +1,42 @@
+@startuml
+
+!include ../../../include/Interfaces.puml
+
+!define NAME "Storage"
+!define BELONGS "middleware"
+
+' defines
+package BELONGS {
+  class NAME $tag_module $tag_state_immutable {
+    .. state ..
+    - initialized
+    - registration[]
+    - statistics
+    .. initialization ..
+    - Init()
+    .. registration ..
+    + Register()
+    .. action ..
+    + Load()
+    - StoreBlock()
+    - StoreSettings()
+  }
+}
+
+' realizes
+NAME -up- "IStorage"
+NAME -up- "IStorageInternal"
+
+' depends on
+NAME --( "IAssert"
+NAME --( "IConfig"
+NAME --( "ICrc"
+NAME --( "IEeprom"
+NAME --( "IError"
+NAME --( "IGeneric"
+NAME --( "IMemory"
+NAME --( "ISecurity"
+
+remove @unlinked
+
+@enduml
